@@ -1,11 +1,12 @@
 import React from 'react'
 import Badge from './components/Badge'
 import Send from './components/Send'
-
+import Trash from './components/Trash'
 export default function App() {
   return (
     <div>
       <Send/>
+      <Trash/>
       {/* <Badge>12</Badge>  */}
       <div style={{ display: "flex", padding: "18px",width:"800px" }}>
         <img src="./vite.svg" alt="" />
