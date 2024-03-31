@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #DEE7EA;
+    padding: 10px;
+    width: 372px;
+    box-shadow: rgb(166, 166, 166) 1px 1px 1px 1px;
+}
+
+.image {
+    width: auto;
+    height: 45px;
+    border-radius: 100%;
+    overflow: hidden;
+
+}
+.name{
+    font-weight: 600;
+}
+.rightSide{
+    text-align: center;
+}
+
+.clock {}
+
+.starOff {
+    color: #D9DDE8;
+
+}
+
+.starOn {
+    color: #14A389;
+}
