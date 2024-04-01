@@ -1,0 +1,18 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1px solid #B3BDCC;
+    padding: 5px;
+    width: 365px;
+    margin: 0 auto;
+    
+  }
+
+  .search-input {
+    border: none;
+    outline: none;
+    width: calc(100% - 40px); /* subtract the width of the icon */
+    padding: 10px;
+  }

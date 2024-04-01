@@ -1,0 +1,8 @@
+.main {
+    background-color: var(--prmary-color);
+    padding: 8px;
+    color: aliceblue;
+    border-radius: 8px;
+    /* width: fit-content; */
+font-weight: 600;
+}
