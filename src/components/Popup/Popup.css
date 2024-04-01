@@ -1,0 +1,59 @@
+.outside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 252, 204);
+    opacity: 0.8;
+    display: grid;
+    place-items: center;
+}
+.inside{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    outline: 5000px solid rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    animation: scale-in 0.5s ease-in-out;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+  }
+  .btns{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+
+}
+@keyframes scale-in {
+    from {
+      transform: translate(-50%, -50%) scale(0.1);
+      opacity: 0.5;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .cancel{
+    background-color: #ff9896;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    
+  }
+  .confirm{
+    border-radius: 5px;
+    width: 80px;
+    height: 25px;
+    background-color: #00a38b;
+  }

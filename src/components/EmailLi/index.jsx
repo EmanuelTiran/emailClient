@@ -4,7 +4,7 @@ import styles from './style.module.css'
 import { FaStar } from "react-icons/fa";
 
 
-export default function EmailLi({ name, subject, img }) {
+export default function EmailLi({ name, subject, img, count }) {
     const [flag, setFlag] = useState(true);
 
     return (
@@ -16,8 +16,16 @@ export default function EmailLi({ name, subject, img }) {
             </div>
             <div className={styles.rightSide}>
                 <div className={styles.clock}>11:43</div>
-                {flag ? <FaStar className={styles.starOn} onClick={() => setFlag(!flag)} /> : <FaStar className={styles.starOff} onClick={() => setFlag(!flag)} />}
-            </div>
+                {count ? (
+  <div className={styles.count}>{count}</div>
+) : (
+  flag ? (
+    <FaStar className={styles.starOn} onClick={() => setFlag(!flag)} />
+  ) : (
+    <FaStar className={styles.starOff} onClick={() => setFlag(!flag)} />
+  )
+)}
+                </div>
         </div>
-    )
+            )
 }

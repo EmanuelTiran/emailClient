@@ -1,0 +1,29 @@
+.container {
+    width: 649px;
+    height: 147px;
+    border-radius: 1px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .line{
+      width: 598px;
+      border-top: 1px solid #DEE1E6;
+  }
+  
+  .date {
+    width: 228px;
+    height: 22px;
+    font-weight: 500;
+    font-size: 12.5px;
+    color: #A2AAB4;
+  }
+  .title {
+      width: 464px;
+      height: 40px;
+      font-weight: 600;
+      font-size: 30px;
+      color: #071232;
+    }

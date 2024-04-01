@@ -1,8 +1,30 @@
-.main {
-    background-color: var(--prmary-color);
-    padding: 8px;
-    color: aliceblue;
-    border-radius: 8px;
-    /* width: fit-content; */
-font-weight: 600;
+.main{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    width: 249px;
+    height: 51px;
+    padding-left: 8px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    border-color: transparent;
+}
+
+.text{
+    width: 107px;
+    height: 21px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+.context{
+    width: 107px;
+    height: 21px;
 }

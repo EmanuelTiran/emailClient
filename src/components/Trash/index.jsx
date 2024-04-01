@@ -7,8 +7,8 @@ import styles from './style.module.css'
 export default function Trash() {
     return (
         <div className={styles.main}>
-            <BsFillTrash3Fill />
-            <BsThreeDotsVertical />
+            <BsFillTrash3Fill className={styles.trash}/>
+            <BsThreeDotsVertical className={styles.dots} />
         </div>
     )
 }

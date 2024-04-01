@@ -1,9 +1,12 @@
 .main {
     display: flex;
     justify-content: space-evenly;
-    background-color: #DEE7EA;
+    background-color: #f4f6f8;
     padding: 10px;
     width: 372px;
+}
+
+.main:hover {
     box-shadow: rgb(166, 166, 166) 1px 1px 1px 1px;
 }
 
@@ -14,13 +17,21 @@
     overflow: hidden;
 
 }
-.name{
+
+.name {
     font-weight: 600;
 }
-.rightSide{
+
+.rightSide {
     text-align: center;
 }
-
+.count{
+    width: auto;
+    background-color: #14A389;
+    border-radius: 5px;
+    color: #DEE7EA;
+    padding: 2px;
+}
 .clock {}
 
 .starOff {

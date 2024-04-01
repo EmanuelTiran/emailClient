@@ -1,8 +1,14 @@
 .main{
-    background-color: rgb(195, 195, 195);
+    background-color:#ffffff;
     padding: 20px;
     width: 80px;
     display: flex;
     border-radius: 12px;
     justify-content: space-evenly;
+}
+.trash{
+color: #d6dce4;
+}
+.dots{
+    color: #d6dce4;
 }

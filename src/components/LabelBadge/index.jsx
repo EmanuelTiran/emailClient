@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react'
+
 import styles from './style.module.css'
 
-export default function LabelBadge({ name, subject, img }) {
-    const [flag, setFlag] = useState(true);
 
+export default function Rectangle() {
     return (
-        <div className={styles.main}>
-
+        <div >
+            <div className={styles.sqr}></div>
+            <div className={styles.triangle}></div>
         </div>
     )
 }
