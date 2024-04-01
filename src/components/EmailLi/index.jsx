@@ -8,7 +8,7 @@ export default function EmailLi({ name, subject, img, count }) {
     const [flag, setFlag] = useState(true);
 
     return (
-        <div className={styles.main}>
+        <div className={styles.main} title='עמנואל'>
             <img className={styles.image} src="https://m.media-amazon.com/images/I/31p6ZFdyjvL._AC_UF350,350_QL80_.jpg" alt="" srcset="" />
             <div>
                 <div className={styles.name}>Kamil Boerger</div>

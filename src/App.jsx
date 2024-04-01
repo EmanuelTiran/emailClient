@@ -9,11 +9,24 @@ import InputSearch from './components/BoxSearch'
 import Popup from './components/Popup'
 import Login from './components/Login Page'
 import Registration from './components/Register page'
+import NavMain from './components/NavMain'
+import IconMain from './components/IconMain'
 
 import { useState } from 'react';
 import DataContext from './useContext/context'
 export default function App() {
-
+  const badgeData = [
+    { color: "red", label: "Label 1" },
+    { color: "green", label: "Label 2" },
+    { color: "blue", label: "Label 3" },
+    { color: "purple", label: "Label 4" },
+    { color: "orange", label: "Label 5" },
+    { color: "yellow", label: "Label 6" },
+    { color: "cyan", label: "Label 7" },
+    { color: "magenta", label: "Label 8" },
+    { color: "pink", label: "Label 9" },
+    { color: "brown", label: "Label 10" }
+  ];
   const [text, setText] = useState("meir");
   const [open, setOpen] = useState(false);
   const [count, setCount] = useState(0);
@@ -26,12 +39,15 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Registration/>
-      <Login/>
+      <NavMain  />
+      <Registration />
+      <Login />
       <Send />
       <Trash />
       {/* <Badge /> */}
-      <LabelBadge />
+      {badgeData.map((badge, index) => (
+        <LabelBadge key={index} color={badge.color} label={badge.label} />
+      ))}
       <EmailLi count={count} />
       <InputSearch />
       <button onClick={() => handleClick("Popup")}>Popup</button>

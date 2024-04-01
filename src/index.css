@@ -8,6 +8,10 @@
 
 }
 
+button{
+  border: none;
+}
+
 a, input, select,button{
   font: inherit;
 }

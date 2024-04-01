@@ -1,9 +1,15 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 5px;
+}
 .sqr {
     background-color: #FD5E5E;
     width: 128px;
     height: 42px;
     border-radius: 9px;
-    display: inline-block;
+    /* display: inline-block; */
 
 }
 .triangle{
@@ -12,7 +18,7 @@
     height: 33px;
     border-radius: 7px;
     rotate: -45deg;
-    display: inline-block;
-    margin-left: -24px;
-    margin-bottom: 4px;
+    /* display: inline-block; */
+    margin-left: -42px;
+    /* margin-bottom: 0px; */
 }

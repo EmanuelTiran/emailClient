@@ -19,7 +19,9 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
+  .input:focus{
+    border: #00a38b 2px solid;
+  }
   .loginOptions {
     display: flex;
     justify-content: space-between;
