@@ -1,3 +1,5 @@
+import { BrowserRouter } from "react-router-dom";
+
 import './App.css'
 import React from 'react'
 import Badge from './components/Badge'
@@ -10,7 +12,8 @@ import Popup from './components/Popup'
 import Login from './components/Login Page'
 import Registration from './components/Register page'
 import NavMain from './components/NavMain'
-import IconMain from './components/IconMain'
+import NavMsg from './components/NavMessage'
+import Layout from './components/Layout'
 
 import { useState } from 'react';
 import DataContext from './useContext/context'
@@ -36,23 +39,26 @@ export default function App() {
     setText(name);
     setOpen(!open);
   };
-
   return (
     <div className='app'>
-      <NavMain  />
-      <Registration />
-      <Login />
-      <Send />
-      <Trash />
-      {/* <Badge /> */}
-      {badgeData.map((badge, index) => (
-        <LabelBadge key={index} color={badge.color} label={badge.label} />
-      ))}
-      <EmailLi count={count} />
-      <InputSearch />
-      <button onClick={() => handleClick("Popup")}>Popup</button>
-      <DataContext.Provider value={{ text, setText, open, setOpen }}>
-        <Popup />
-      </DataContext.Provider>    </div>
+      <Layout/>
+        {/* <NavMain />
+        <NavMsg/> */}
+        {/* <Registration />
+        <Login />
+        <Send />
+        <Trash />
+        <Badge />
+        {badgeData.map((badge, index) => (
+          <LabelBadge key={index} color={badge.color} label={badge.label} />
+        ))}
+        <EmailLi count={count} />
+        <InputSearch />
+        <button onClick={() => handleClick("Popup")}>Popup</button>
+        <DataContext.Provider value={{ text, setText, open, setOpen }}>
+          <Popup />
+        </DataContext.Provider> */}
+            </div>
+
   )
 }

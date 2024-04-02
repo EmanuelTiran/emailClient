@@ -1,14 +1,18 @@
 .main{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
-
-    width: 249px;
+    width: 220px;
     height: 51px;
     padding-left: 8px;
-    background-color: var(--primary-color);
+    background-color: var(--prmary-color);
     border-radius: 12px;
     border-color: transparent;
+}
+.main:hover{
+    background-color: #065f51;
+    
 }
 
 .text{
