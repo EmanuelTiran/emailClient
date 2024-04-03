@@ -1,0 +1,48 @@
+/* style.css או styles.scss */
+
+.search-container {
+    width: 100%;
+    max-width: 400px; /* קובע רוחב מקסימלי */
+    margin: 0 auto; /* מרכז את התיבה באמצע העמוד */
+    padding: 10px;
+    resize: none;
+  }
+  
+  .textarea {
+    width: 85%;
+    height: 100px; /* קובע גובה לתיבת הטקסט */
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    resize: none;
+  }
+  
+  .alignRight {
+    text-align: right; /* יישור הטקסט לימין */
+  }
+  
+  .italic {
+    font-style: italic; /* הדגשת הטקסט */
+  }
+  .bold{
+    font-weight: 900;
+  }
+  
+  .button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color:var(--prmary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* שינוי צבע הרקע כאשר העכבר מעל הכפתור */
+  }
+  .btns{
+display: flex;
+justify-content: space-around;
+  }
+  

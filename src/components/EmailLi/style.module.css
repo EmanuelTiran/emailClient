@@ -1,15 +1,19 @@
 .main {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-between;
     background-color: #f4f6f8;
     padding: 10px;
     width: 372px;
+    margin-top: 2px;
 }
 
 .main:hover {
     box-shadow: rgb(166, 166, 166) 1px 1px 1px 1px;
 }
-
+.pictureSub{
+    display: flex;
+    gap: 20px;
+}
 .image {
     width: auto;
     height: 45px;
