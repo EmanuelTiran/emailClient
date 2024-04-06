@@ -43,8 +43,8 @@ export default function App() {
   };
   return (
     <div className='app'>
-      {/* <Layout/> */}
-<EmailItem/>
+      <Layout/>
+{/* <EmailItem/> */}
       {/* <EmailPage /> */}
       {/* <NavMain />
         <NavMsg/>

@@ -1,15 +1,15 @@
 /* style.css או styles.scss */
 
 .search-container {
-    width: 100%;
-    max-width: 400px; /* קובע רוחב מקסימלי */
+    /* width: 100%; */
+    /* max-width: 400px;  */
     margin: 0 auto; /* מרכז את התיבה באמצע העמוד */
     padding: 10px;
     resize: none;
   }
   
   .textarea {
-    width: 85%;
+    width: 100%;
     height: 100px; /* קובע גובה לתיבת הטקסט */
     padding: 5px;
     font-size: 16px;

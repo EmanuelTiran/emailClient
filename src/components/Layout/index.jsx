@@ -25,9 +25,10 @@ export default function Layout() {
           </Route>
           <Route path="watch" element={<h1>watch</h1>}>
           </Route>
-          <Route path="messages" element={<MessagesLayout/>}>
-            <Route path=":emailType" element={<EmailPage/>} />
-            <Route path=":emailType/:emailId" element={<><EmailPage/><EmailItem/></>} />
+          <Route path="messages" element={<MessagesLayout />}>
+            <Route path=":emailType" element={<EmailPage />} />
+            <Route path=":emailType/:emailId" element={<><EmailPage /><EmailItem /></>} >
+            </Route>
           </Route>
           <Route path="stats" element={<h1>stats</h1>}>
           </Route>

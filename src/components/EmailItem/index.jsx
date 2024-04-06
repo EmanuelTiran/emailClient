@@ -1,16 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styles from './style.module.css'
 import { FaBold } from "react-icons/fa";
 import { PiTextItalicBold } from "react-icons/pi";
 import { FaAlignLeft, FaAlignRight } from "react-icons/fa6";
 import { IoIosSend } from "react-icons/io";
+import { useParams } from 'react-router-dom';
 
 export default function EmailItem() {
+  
     const [text, setText] = useState('');
     const [alignRight, setAlignRight] = useState(false);
     const [italic, setItalic] = useState(false);
     const [bold, setBold] = useState(false);
+    const [data, setData] = useState([]);
 
+  const {emailId} = useParams()
+    // useEffect(() => {
+    //     axios.get('https://api.example.com/data')
+    //       .then(response => {
+    //         setData(response.data);
+    //       })
+    //       .catch(error => {
+    //         console.error('Error fetching data: ', error);
+    //       });
+    //   }, []);
+    
     const handleAlignmentChange = () => {
         setAlignRight(!alignRight);
     };
