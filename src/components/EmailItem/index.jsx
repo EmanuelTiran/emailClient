@@ -43,7 +43,8 @@ export default function EmailItem() {
     };
 
     return (
-        <div className={styles.main} title='עמנואל'>
+        <div className={styles.main} >
+            
             <textarea
                 className={`${styles.textarea} ${alignRight ? styles.alignRight : ''} ${italic ? styles.italic : ''}  ${bold ? styles.bold : ''}`}
                 value={text}
