@@ -1,35 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import styles from './style.module.css'
-import { FaBold } from "react-icons/fa";
-import { PiTextItalicBold } from "react-icons/pi";
-import { FaAlignLeft, FaAlignRight } from "react-icons/fa6";
-import { IoIosSend } from "react-icons/io";
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import styles from './style.module.css';
+import { FaBold, FaItalic, FaUnderline } from "react-icons/fa";
+import { IoColorFill } from "react-icons/io5";
+import { FaAlignLeft, FaAlignCenter, FaAlignRight, FaAlignJustify } from "react-icons/fa";
 
 export default function EmailItem() {
-  
-    const [text, setText] = useState('');
+    const [chooseColor, setChooseColor] = useState(false);
+    const [textColor, setTextColor] = useState('black');
     const [alignRight, setAlignRight] = useState(false);
     const [italic, setItalic] = useState(false);
     const [bold, setBold] = useState(false);
-    const [data, setData] = useState([]);
 
-  const {emailId} = useParams()
-    // useEffect(() => {
-    //     axios.get('https://api.example.com/data')
-    //       .then(response => {
-    //         setData(response.data);
-    //       })
-    //       .catch(error => {
-    //         console.error('Error fetching data: ', error);
-    //       });
-    //   }, []);
-    
     const handleAlignmentChange = () => {
         setAlignRight(!alignRight);
     };
-
     const handleItalicChange = () => {
         setItalic(!italic);
     };
@@ -37,31 +21,52 @@ export default function EmailItem() {
         setBold(!bold);
     };
 
-    const handleSubmit = () => {
-        // פעולות לשליחת הטקסט
-        console.log("טקסט שנשלח:", text);
-    };
 
+    const colors = ["black", "red", "blue", "green", "yellow", "purple", "orange", "pink", "gray"];
     return (
-        <div className={styles.main} >
-            
-            <textarea
-                className={`${styles.textarea} ${alignRight ? styles.alignRight : ''} ${italic ? styles.italic : ''}  ${bold ? styles.bold : ''}`}
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="הזן טקסט כאן..."
-            ></textarea>
-            <div className={styles.btns}>
-                <button className={`${styles.align} ${styles.button}`} onClick={handleAlignmentChange}>
-                    {alignRight ? <FaAlignLeft /> : <FaAlignRight />}
-                </button>
-                <button className={`${styles.button}`} onClick={handleBoldChange}>
-                     <FaBold />
-                </button>
-                <button className={`${styles.italic} ${styles.button}`} onClick={handleItalicChange}>
-                  <PiTextItalicBold /> 
-                </button>
-                <button className={`${styles.send} ${styles.button}`} onClick={handleSubmit}><IoIosSend/></button>
+        <div className={`${styles.container}`} >
+            <textarea style={{ fontSize: "20px", color: textColor }} className={`${alignRight ? styles.alignRight : ''} ${italic ? styles.italic : ''}  ${bold ? styles.bold : ''}`} />
+            <div className={styles.textTools}>
+                <div className={styles.textEditorToolbar}>
+                    <div className={styles.tool} onClick={handleBoldChange}>
+                        <FaBold />
+                    </div>
+                    <div className={styles.tool} onClick={handleItalicChange} >
+                        <FaItalic />
+                    </div>
+                    <div className={styles.tool}>
+                        <FaUnderline />
+                    </div>
+                    {chooseColor && (
+                        <div className={styles.chooseColor} >
+                            {colors.map((color, index) => (
+                                <div
+                                    key={index}
+                                    onClick={() => setTextColor(color)}
+                                    className={styles.color}
+                                    style={{ backgroundColor: color }}
+                                ></div>
+                            ))}
+                        </div>
+                    )}
+                    <div className={styles.tool} onClick={() => setChooseColor(!chooseColor)}>
+                        <IoColorFill />
+                    </div>
+                </div>
+                <div className={styles.textAlignmentToolbar}>
+                    <div className={styles.tool} onClick={handleAlignmentChange}>
+                        <FaAlignLeft />
+                    </div>
+                    <div className={styles.tool}>
+                        <FaAlignCenter />
+                    </div>
+                    <div className={styles.tool}>
+                        <FaAlignRight />
+                    </div>
+                    <div className={styles.tool}>
+                        <FaAlignJustify />
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -1,48 +1,74 @@
-/* style.css או styles.scss */
+.container {
+  height: 180px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--text-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
-.search-container {
-    /* width: 100%; */
-    /* max-width: 400px;  */
-    margin: 0 auto; /* מרכז את התיבה באמצע העמוד */
-    padding: 10px;
-    resize: none;
-  }
-  
-  .textarea {
-    width: 100%;
-    height: 100px; /* קובע גובה לתיבת הטקסט */
-    padding: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    resize: none;
-  }
-  
-  .alignRight {
-    text-align: right; /* יישור הטקסט לימין */
-  }
-  
-  .italic {
-    font-style: italic; /* הדגשת הטקסט */
-  }
-  .bold{
-    font-weight: 900;
-  }
-  
-  .button {
-    padding: 5px 10px;
-    margin-right: 10px;
-    background-color:var(--prmary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3; /* שינוי צבע הרקע כאשר העכבר מעל הכפתור */
-  }
-  .btns{
-display: flex;
-justify-content: space-around;
-  }
-  
+
+.chooseColor {
+  position: absolute;
+  margin-left: 110px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  text-align: center; 
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border: 1px solid var(--text-color);
+  margin-bottom: 0; 
+  text-align: center;
+  margin-top: -81px;
+  padding: 5px;
+  gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.color{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.textTools {
+  width: 100%;
+  height: 30px;
+  border-top: 1px solid var(--text-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.textEditorToolbar {
+  /* border-right: 1px solid var(--text-color); */
+  display: flex;
+}
+
+.textAlignmentToolbar {
+  display: flex;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.tool:hover{
+  color: var(--prmary-color);
+}
+.alignRight {
+  text-align: right; /* יישור הטקסט לימין */
+}
+.italic {
+  font-style: italic; /* הדגשת הטקסט */
+}
+.bold{
+  font-weight: 900;
+}

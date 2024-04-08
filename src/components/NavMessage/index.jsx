@@ -16,12 +16,12 @@ import { SlEnvolopeLetter } from "react-icons/sl";
 
 export default function NavMessage() {
     const typeData = [
-        { icon: CiInboxIn, type: 'Inbox' ,to:'Inbox'},
-        { icon: LuSend, type: 'Sent Emails' ,to:'SentEmails'},
-        { icon: FaStar, type: 'favorite' ,to:'favorite'},
-        { icon: FaPen, type: 'Draft' ,to:'Draft'},
-        { icon: MdDelete, type: 'Deleted' ,to:'Deleted'},
-        { icon: RiArrowDownSLine, type: 'more' ,to:'more'},
+        { icon: CiInboxIn, type: 'Inbox', to: 'Inbox' },
+        { icon: LuSend, type: 'Sent Emails', to: 'SentEmails' },
+        { icon: FaStar, type: 'favorite', to: 'favorite' },
+        { icon: FaPen, type: 'Draft', to: 'Draft' },
+        { icon: MdDelete, type: 'Deleted', to: 'Deleted' },
+        { icon: RiArrowDownSLine, type: 'more', to: 'more' },
     ];
     const badgeData = [
         { color: "red", label: "Label 1" },
@@ -33,7 +33,7 @@ export default function NavMessage() {
         <div className={style.container}>
             <div className={style.title}>
                 <MdKeyboardArrowLeft className={style.iconTitle} /> <h1>  MailBox</h1></div>
-            <NewMsgBtn  />
+            <NewMsgBtn />
             {/* <div className={style.sendBtn} ><SlEnvolopeLetter /><div>New Message</div></div> */}
             <ul>
                 {typeData.map((obj, index) => (

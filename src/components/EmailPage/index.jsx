@@ -11,14 +11,12 @@ import { CiLight } from 'react-icons/ci';
 
 export default function EmailPage({ color, label }) {
     const [dataMail, setDataMail] = useState([]);
-    const [userName, setUserName] = useState('');
 
     const currentURL = window.location.href;
     const parts = currentURL.split('/');
     const urlWithoutLastWord = parts.slice(0, parts.length - 1).join('/');
 
-    let { emailType, emailId } = useParams();
-
+    let { emailType ,emailId} = useParams();
     // const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
     // { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
     // ]
@@ -27,26 +25,21 @@ export default function EmailPage({ color, label }) {
     ]
 
     useEffect(() => {
-        axios.get('http://localhost:5050/user/inbox')
+        setDataMail([])
+        axios.get(`http://localhost:5050/user/${emailType}`)
             .then(response => {
-                setDataMail(response.data);
+                console.log(response)
+                setDataMail(response.data.chats);
                 console.log(response.data);
+                // console.log("senderID", response.data.chats[0].chat.msg[response.data.chats[0].chat.msg.length - 1].from._id);
             })
             .catch(error => {
                 console.error('Error fetching data: ', error);
             });
-    }, []);
+    }, [emailType]);
 
-    const nameUser = (id) => {
-        axios.get(`http://localhost:5050/user/name/${id}`)
-            .then(response => {
-                setUserName(response.data);
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching data: ', error);
-            });
-    }
+
+
 
     return (
 
@@ -60,8 +53,7 @@ export default function EmailPage({ color, label }) {
                         isActive ? style.isActive : ""
                     }
                 >
-                    {/* {nameUser(mail.chat.msg[0].from)} */}
-                    <EmailLi key={index} count={mail.chat.msg.length} name={userName} subject={mail.chat.subject} className={style.liMail} />
+                    <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
                 </NavLink>
 
             ))}
