@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, NavLink, Outlet } from 'react-router-dom';
 import axios from 'axios';
 
 import style from './style.module.css'
 import Search from '../BoxSearch'
 import EmailLi from '../EmailLi'
-import { CiLight } from 'react-icons/ci';
 
 
 export default function EmailPage({ color, label }) {
     const [dataMail, setDataMail] = useState([]);
+    const [load, setLoad] = useState(false);
 
     const currentURL = window.location.href;
     const parts = currentURL.split('/');
@@ -26,15 +26,17 @@ export default function EmailPage({ color, label }) {
 
     useEffect(() => {
         setDataMail([])
+        setLoad(true)
         axios.get(`http://localhost:5050/user/${emailType}`)
             .then(response => {
                 console.log(response)
                 setDataMail(response.data.chats);
-                console.log(response.data);
-                // console.log("senderID", response.data.chats[0].chat.msg[response.data.chats[0].chat.msg.length - 1].from._id);
+                console.log("response.data:", response.data);
             })
             .catch(error => {
                 console.error('Error fetching data: ', error);
+            }).finally(() => {
+                setLoad(false);
             });
     }, [emailType]);
 
@@ -42,22 +44,24 @@ export default function EmailPage({ color, label }) {
 
 
     return (
+        <>
+            <div className={`${style.container} `}>
+                <h1>{emailType} </h1>
+                <Search /><div className={`${load ? style.load : ""}`}>
+                {dataMail && dataMail.map((mail, index) => (
+                    <NavLink
+                        to={`${mail._id}`}
+                        className={({ isActive }) =>
+                            isActive ? style.isActive : ""
+                        }
+                    ><div className={`${style.link} `}>
+                            <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
+                        </div>
+                    </NavLink>
 
-        <div className={style.container}>
-            <h1>{emailType} </h1>
-            <Search />
-            {dataMail && dataMail.map((mail, index) => (
-                <NavLink
-                    to={emailId ? `${urlWithoutLastWord}/${mail._id}` : `${mail._id}`}
-                    className={({ isActive }) =>
-                        isActive ? style.isActive : ""
-                    }
-                ><div className={style.link}>
-                        <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
-                    </div>
-                </NavLink>
-
-            ))}
-        </div>
+                ))}</div>
+            </div>
+            <Outlet />
+        </>
     )
 }

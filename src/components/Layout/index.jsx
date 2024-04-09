@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './style.module.css';
 import { Routes, Route } from "react-router-dom";
 import Login from '../Login Page';
@@ -7,7 +7,8 @@ import NavMsg from '../NavMessage';
 import MainLayot from '../NavMainLayout';
 import MessagesLayout from '../NavMsgLayout';
 import EmailPage from '../EmailPage';
-import EmailItem from '../EmailItem';
+import EmailItem from '../TextArea';
+import EmailForm from '../EmailForm';
 
 export default function Layout() {
   return (
@@ -26,9 +27,12 @@ export default function Layout() {
           <Route path="watch" element={<h1>watch</h1>}>
           </Route>
           <Route path="messages" element={<MessagesLayout />}>
-            <Route path=":emailType" element={<EmailPage />} />
-            <Route path=":emailType/:emailId" element={<><EmailPage /><EmailItem /></>} >
+            <Route path=":emailType" element={<EmailPage />} >
+              <Route path=":emailId" element={<><EmailItem /></>} >
+              </Route>
             </Route>
+              <Route path="newmsgbtn" element={<><EmailForm /></>}>
+              </Route>
           </Route>
           <Route path="stats" element={<h1>stats</h1>}>
           </Route>

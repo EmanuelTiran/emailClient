@@ -31,9 +31,11 @@ export default function NavMessage() {
     ];
     return (
         <div className={style.container}>
-            <div className={style.title}>
-                <MdKeyboardArrowLeft className={style.iconTitle} /> <h1>  MailBox</h1></div>
-            <NewMsgBtn />
+            <div className={style.title}><NavLink to={"/"}>
+                <MdKeyboardArrowLeft className={style.iconTitle} /></NavLink> <h1>  MailBox</h1> </div>
+            <NavLink to={`newmsgbtn`}>
+                <NewMsgBtn />
+            </NavLink>
             {/* <div className={style.sendBtn} ><SlEnvolopeLetter /><div>New Message</div></div> */}
             <ul>
                 {typeData.map((obj, index) => (

@@ -1,0 +1,48 @@
+/* EmailForm.module.css */
+
+.long{
+    grid-column: span 2;
+}
+.long h1{
+font-weight: 600;
+border-bottom: 0.5px solid rgb(219, 219, 219);
+padding: 10px;
+}
+.emailForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: var(--prmary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -15,10 +15,11 @@ import NavMain from './components/NavMain'
 import NavMsg from './components/NavMessage'
 import Layout from './components/Layout'
 import EmailPage from './components/EmailPage'
-import EmailItem from './components/EmailItem'
+import EmailItem from './components/TextArea'
 
 import { useState } from 'react';
 import DataContext from './useContext/context'
+import EmailForm from "./components/EmailForm";
 export default function App() {
   const badgeData = [
     { color: "red", label: "Label 1" },
@@ -44,6 +45,7 @@ export default function App() {
   return (
     <div className='app'>
       <Layout/>
+      {/* <EmailForm/> */}
 {/* <EmailItem/> */}
       {/* <EmailPage /> */}
       {/* <NavMain />

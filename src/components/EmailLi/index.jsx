@@ -32,11 +32,9 @@ export default function EmailLi({ sender, subject, img, count, date }) {
   useEffect(() => {
     nameUser(sender);
     AvatarUser(sender)
-    console.log(date);
     const date1 = new Date(date);
     const shaa = date1.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     setTime(shaa)
-    console.log("shaa:", shaa);
   }, []);
 
   return (

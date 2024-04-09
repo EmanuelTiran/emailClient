@@ -2,12 +2,25 @@
     width: 350px;
 }
 
-.isActive  {
-    border-right: 3px solid black;
-}
-
-
 .isActive .link{
-    border-right: 3px solid black;
-    color: var(--prmary-color);
+    border-right: 3px solid var(--prmary-color);
+    background-color: aliceblue;
 }
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .load {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #007bff; /* צבע הגבה */
+    border-radius: 50%;
+    animation: rotate 1s linear infinite; /* קריאה לאנימציה */
+  }
+  
