@@ -10,6 +10,7 @@ export default function EmailItem() {
     const [alignRight, setAlignRight] = useState(false);
     const [italic, setItalic] = useState(false);
     const [bold, setBold] = useState(false);
+    const [underLine, setUnderLine] = useState(false);
 
     const handleAlignmentChange = () => {
         setAlignRight(!alignRight);

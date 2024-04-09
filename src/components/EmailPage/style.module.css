@@ -2,10 +2,12 @@
     width: 350px;
 }
 
-/* .isActive .border{
-    border-right: 3px solid var(--prmary-color);
+.isActive  {
+    border-right: 3px solid black;
 }
-.isActive .liMail{
-    
+
+
+.isActive .link{
+    border-right: 3px solid black;
     color: var(--prmary-color);
-} */
+}

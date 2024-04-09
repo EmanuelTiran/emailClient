@@ -71,3 +71,12 @@ img {
 .typesEmail:hover .icon {
     color: var(--prmary-color);
 }
+
+.isActive {
+    color: var(--prmary-color);
+    /* border-right: 3px solid black; גבול מימין כאשר הלינק פעיל */
+}
+.isActive .icon{
+    color: var(--prmary-color);
+    /* border-right: 3px solid black; גבול מימין כאשר הלינק פעיל */
+}

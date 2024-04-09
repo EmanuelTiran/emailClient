@@ -16,7 +16,7 @@ export default function EmailPage({ color, label }) {
     const parts = currentURL.split('/');
     const urlWithoutLastWord = parts.slice(0, parts.length - 1).join('/');
 
-    let { emailType ,emailId} = useParams();
+    let { emailType, emailId } = useParams();
     // const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
     // { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
     // ]
@@ -52,8 +52,9 @@ export default function EmailPage({ color, label }) {
                     className={({ isActive }) =>
                         isActive ? style.isActive : ""
                     }
-                >
-                    <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
+                ><div className={style.link}>
+                        <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
+                    </div>
                 </NavLink>
 
             ))}
