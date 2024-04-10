@@ -6,6 +6,7 @@ import axios from 'axios';
 import style from './style.module.css'
 import Search from '../BoxSearch'
 import EmailLi from '../EmailLi'
+import useAxiosReq from '../useAxiosReq'
 
 
 export default function EmailPage({ color, label }) {
@@ -23,7 +24,7 @@ export default function EmailPage({ color, label }) {
     const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
     { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
     ]
-
+    const { loading, data, error, fetchData } = useAxiosReq({ defaultVal: {}, method: 'GET', url: emailType })
     useEffect(() => {
         setDataMail([])
         setLoad(true)
@@ -40,6 +41,7 @@ export default function EmailPage({ color, label }) {
             });
     }, [emailType]);
 
+    console.log(data);
 
 
 
@@ -48,18 +50,18 @@ export default function EmailPage({ color, label }) {
             <div className={`${style.container} `}>
                 <h1>{emailType} </h1>
                 <Search /><div className={`${load ? style.load : ""}`}>
-                {dataMail && dataMail.map((mail, index) => (
-                    <NavLink
-                        to={`${mail._id}`}
-                        className={({ isActive }) =>
-                            isActive ? style.isActive : ""
-                        }
-                    ><div className={`${style.link} `}>
-                            <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
-                        </div>
-                    </NavLink>
+                    {dataMail && dataMail.map((mail, index) => (
+                        <NavLink
+                            to={`${mail._id}`}
+                            className={({ isActive }) =>
+                                isActive ? style.isActive : ""
+                            }
+                        ><div className={`${style.link} `}>
+                                <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
+                            </div>
+                        </NavLink>
 
-                ))}</div>
+                    ))}</div>
             </div>
             <Outlet />
         </>
