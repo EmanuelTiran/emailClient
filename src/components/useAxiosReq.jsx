@@ -9,6 +9,7 @@ export default function useAxiosReq({ defaultVal, method, url, body }) {
    
    console.log("bla bla bla");
    const fetchData = async () => {
+      setData([])
       setLoading(true)
       try {
 
@@ -20,7 +21,7 @@ export default function useAxiosReq({ defaultVal, method, url, body }) {
          setLoading(false)
       }
    }
-   useEffect(() => { fetchData() }, [])
+   useEffect(() => { fetchData() }, [url])
 
    return { data, loading, error , fetchData}
 }
