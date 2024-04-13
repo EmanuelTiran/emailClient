@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { useParams } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 
 import styles from './style.module.css'
-import { FaStar } from "react-icons/fa";
 
 
 export default function EmailLi({ sender, subject, img, count, date }) {
@@ -10,6 +11,7 @@ export default function EmailLi({ sender, subject, img, count, date }) {
   const [senderName, setSenderName] = useState('');
   const [senderAvatar, setSenderAvatar] = useState('');
   const [time, setTime] = useState();
+  let { emailId } = useParams();
 
   const nameUser = (id) => {
     axios.get(`http://localhost:5050/user/name/${id}`)
@@ -38,7 +40,7 @@ export default function EmailLi({ sender, subject, img, count, date }) {
   }, []);
 
   return (
-    <div className={styles.main} title='עמנואל'> <div className={styles.pictureSub}>
+    <div className={styles.main} title={`${senderName}`}> <div className={styles.pictureSub}>
       <img className={styles.image} src={senderAvatar} />
       <div>
         <div className={styles.name}>{senderName}</div>

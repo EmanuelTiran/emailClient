@@ -13,11 +13,8 @@ export default function EmailPage({ color, label }) {
     const [dataMail, setDataMail] = useState([]);
     const [load, setLoad] = useState(false);
 
-    const currentURL = window.location.href;
-    const parts = currentURL.split('/');
-    const urlWithoutLastWord = parts.slice(0, parts.length - 1).join('/');
 
-    let { emailType, emailId } = useParams();
+    let { emailType } = useParams();
     // const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
     // { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
     // ]
