@@ -24,25 +24,25 @@ export default function EmailPage({ color, label }) {
     const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
     { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
     ]
-    const { loading, data, error, fetchData } = useAxiosReq({ defaultVal: {}, method: 'GET', url: emailType ,  })
+    // const { loading, data, error, fetchData } = useAxiosReq({ defaultVal: {}, method: 'GET', url: emailType ,  })
 
-    // useEffect(() => {
-    //     setDataMail([])
-    //     setLoad(true)
-    //     axios.get(`http://localhost:5050/user/${emailType}`)
-    //         .then(response => {
-    //             console.log(response)
-    //             setDataMail(response.data.chats);
-    //             console.log("response.data:", response.data);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching data: ', error);
-    //         }).finally(() => {
-    //             setLoad(false);
-    //         });
-    // }, [emailType]);
+    useEffect(() => {
+        setDataMail([])
+        setLoad(true)
+        axios.get(`http://localhost:5050/user/${emailType}`)
+            .then(response => {
+                console.log(response)
+                setDataMail(response.data.chats);
+                console.log("response.data:", response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data: ', error);
+            }).finally(() => {
+                setLoad(false);
+            });
+    }, [emailType]);
 
-    console.log(data);
+    // console.log(data);
 
 
 
@@ -51,13 +51,13 @@ export default function EmailPage({ color, label }) {
             <div className={`${style.container} `}>
                 <h1>{emailType} </h1>
                 <Search /><div className={`${load ? style.load : ""}`}>
-                    {data.chats && data.chats.map((mail, index) => (
+                    {dataMail && dataMail.map((mail, index) => (
                         <NavLink
                             to={`${mail._id}`}
                             className={({ isActive }) =>
                                 isActive ? style.isActive : ""
                             }
-                        ><div className={`${style.link} `}>
+                        ><div className={`${style.link}`}>
                                 <EmailLi key={index} count={mail.chat.msg.length} sender={mail.chat.msg[mail.chat.msg.length - 1].from._id} subject={mail.chat.subject} date={mail.chat.msg[mail.chat.msg.length - 1].date} className={style.liMail} />
                             </div>
                         </NavLink>
