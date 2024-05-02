@@ -29,9 +29,9 @@ export default function NavMain() {
                     >
                         <div className={style.border}>
                             <li className={style.li} key={index} title={obj.title}>
-                                <btn href="#" tabIndex="0">
+                                <button href="#" tabIndex="0">
                                     <obj.icon className={style.icon} />
-                                </btn>
+                                </button>
                             </li></div>
                     </NavLink>
 

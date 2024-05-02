@@ -15,13 +15,10 @@ export default function EmailPage({ color, label }) {
 
 
     let { emailType } = useParams();
-    // const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
-    // { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
-    // ]
+
     const emailData = [{ name: "Emanuel", subject: "Subject", img: "./", count: 5, id: "Emanuel" },
     { name: "Shara", subject: "whatwup dude???", img: "./", count: 65, id: "Tiran" },
     ]
-    // const { loading, data, error, fetchData } = useAxiosReq({ defaultVal: {}, method: 'GET', url: emailType ,  })
 
     useEffect(() => {
         setDataMail([])
@@ -46,11 +43,11 @@ export default function EmailPage({ color, label }) {
     return (
         <>
             <div className={`${style.container} `}>
-                <h1>{emailType} </h1>
+                <h1>{emailType}</h1>
                 <Search /><div className={`${load ? style.load : ""}`}>
                     {dataMail && dataMail.map((mail, index) => (
                         <NavLink
-                            to={`${mail._id}`}
+                            to={`${mail.chat._id}`}
                             className={({ isActive }) =>
                                 isActive ? style.isActive : ""
                             }

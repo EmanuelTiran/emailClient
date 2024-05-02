@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import styles from './style.module.css';
 import { Routes, Route } from "react-router-dom";
 import Login from '../Login Page';
+import Register from '../Register page';
 import NavMain from '../NavMain';
 import NavMsg from '../NavMessage';
 import MainLayot from '../NavMainLayout';
@@ -9,6 +10,7 @@ import MessagesLayout from '../NavMsgLayout';
 import EmailPage from '../EmailPage';
 import EmailItem from '../TextArea';
 import EmailForm from '../EmailForm';
+import Auth from '../Auth';
 
 export default function Layout() {
   return (
@@ -16,7 +18,9 @@ export default function Layout() {
       <Routes>
         {/* <Route path="/" element={<NavMain />} /> */}
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
 
+        {/* <Route path="/" element={<Auth />}> */}
         <Route element={<MainLayot />}>
           <Route path="" element={<h1>Home</h1>}>
           </Route>
@@ -34,11 +38,12 @@ export default function Layout() {
               <Route path="newmsgbtn" element={<><EmailForm /></>}>
               </Route>
           </Route>
-          <Route path="stats" element={<h1>stats</h1>}>
+          <Route path="stats" element={<h1>Stats</h1>}>
           </Route>
-          <Route path="videocam" element={<h1>videocam</h1>}>
+          <Route path="videocam" element={<h1>Videocam</h1>}>
           </Route>
         </Route>
+        {/* </Route> */}
       </Routes>
     </div>
   )

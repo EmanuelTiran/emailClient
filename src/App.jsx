@@ -45,6 +45,7 @@ export default function App() {
   return (
     <div className='app'>
       <Layout/>
+      {/* <DetailMail/> */}
       {/* <EmailForm/> */}
 {/* <EmailItem/> */}
       {/* <EmailPage /> */}

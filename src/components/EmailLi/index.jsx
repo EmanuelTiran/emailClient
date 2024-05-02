@@ -7,6 +7,7 @@ import styles from './style.module.css'
 
 
 export default function EmailLi({ sender, subject, img, count, date }) {
+
   const [flag, setFlag] = useState(true);
   const [senderName, setSenderName] = useState('');
   const [senderAvatar, setSenderAvatar] = useState('');
